@@ -202,6 +202,7 @@ def rss_monitor(context):
                 while(feed_items[1] != rss_d.entries[feed_count]['link'] and feed_items[2] != rss_d.entries[feed_count]['title']):
                     feed_list.insert(0, f'{CUSTOM_MESSAGES}\n'+utilities.format_items(rss_d, feed_count, feed_items[3])[1])
                     feed_count += 1
+                    sleep(95)
                 for feed in feed_list:
                     context.bot.send_message(CHAT_ID, feed, parse_mode='html', disable_web_page_preview=True)
                 # overwrite the existing item with the latest item
